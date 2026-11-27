@@ -1,0 +1,11 @@
+{
+  "name": "catppuccin-t3-code",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "node scripts/generate.mjs",
+    "check": "node scripts/generate.mjs --check && node --test"
+  }
+}

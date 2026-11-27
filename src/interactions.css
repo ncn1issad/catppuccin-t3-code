@@ -1,0 +1,85 @@
+:root :where([data-slot="sidebar"], [data-thread-item], [data-slot="sidebar-menu-button"]) {
+  --catppuccin-interaction: var(--catppuccin-sidebar-interaction);
+}
+
+:root :where(
+  button, a[href], summary, label[for],
+  [role="button"], [role="link"], [role="tab"], [role="option"],
+  [role="menuitem"], [role="menuitemradio"], [role="menuitemcheckbox"],
+  [data-thread-item], [data-active-tab], [data-selected-tab],
+  [data-composer-item-id], [data-slot="sidebar-menu-button"],
+  [data-slot="select-trigger"], [data-slot="select-item"],
+  [data-slot="combobox-trigger"], [data-slot="combobox-item"],
+  [data-slot="autocomplete-trigger"], [data-slot="autocomplete-item"],
+  [data-slot="command-item"], [data-slot="toggle"],
+  [data-slot="menu-item"], [data-slot="menu-radio-item"],
+  [data-slot="menu-checkbox-item"], [data-slot="menu-sub-trigger"],
+  [data-thread-terminal-drawer] [class~="group/tab"],
+  [data-slot="popover-popup"] [data-highlighted]
+):is(
+  :hover, :focus-visible, :active,
+  [data-highlighted]:not([data-highlighted="false"]),
+  [data-pressed]:not([data-pressed="false"]),
+  [data-selected]:not([data-selected="false"]),
+  [data-checked]:not([data-checked="false"]),
+  [data-active]:not([data-active="false"]),
+  [data-popup-open],
+  [data-active-tab="true"], [data-selected-tab="true"],
+  [aria-pressed="true"], [aria-expanded="true"],
+  [aria-selected="true"], [aria-checked="true"],
+  [aria-current]:not([aria-current="false"]),
+  [data-thread-item]:has([aria-current]:not([aria-current="false"])),
+  [data-thread-terminal-drawer] [class~="group/tab"][class~="bg-accent"],
+  [data-thread-terminal-drawer] button[class~="bg-accent/50"]
+):not(:where(
+  :disabled, [disabled], [aria-disabled="true"], [data-disabled],
+  [type="submit"], [data-variant="destructive"],
+  [class~="bg-primary"], [class~="bg-message-action"],
+  [class~="bg-destructive"], [class~="bg-destructive/90"],
+  [class~="hover:bg-destructive"], [class~="text-primary-foreground"],
+  [class~="text-message-action-foreground"], [class~="text-destructive-foreground"],
+  [data-slot="switch"], [data-slot="checkbox"], [data-slot="radio"]
+)) {
+  --control-icon-color: var(--catppuccin-interaction) !important;
+  color: var(--catppuccin-interaction) !important;
+  font-weight: 600 !important;
+
+  & :is(
+    [data-composer-control-label], [data-chat-provider-model-picker-label],
+    [data-slot="menu-item-label"], [data-slot="select-item-text"],
+    [data-slot="combobox-item-content"],
+    :is(span, strong, small, div):is(
+      [class~="text-foreground"], [class~="text-muted-foreground"],
+      [class~="text-muted-foreground/70"], [class~="text-foreground/70"],
+      [class~="text-sidebar-foreground"], [class~="text-sidebar-muted-foreground"],
+      [class~="font-normal"], [class~="font-medium"]
+    ),
+    svg.lucide
+  ):not(:where(
+    :is(
+      :disabled, [disabled], [aria-disabled="true"], [data-disabled],
+      [type="submit"], [data-variant="destructive"],
+      [class~="bg-primary"], [class~="bg-message-action"],
+      [class~="bg-destructive"], [class~="bg-destructive/90"],
+      [class~="hover:bg-destructive"], [class~="text-primary-foreground"],
+      [class~="text-message-action-foreground"], [class~="text-destructive-foreground"],
+      [data-slot="switch"], [data-slot="checkbox"], [data-slot="radio"]
+    ),
+    :is(
+      :disabled, [disabled], [aria-disabled="true"], [data-disabled],
+      [type="submit"], [data-variant="destructive"],
+      [class~="bg-primary"], [class~="bg-message-action"],
+      [class~="bg-destructive"], [class~="bg-destructive/90"],
+      [class~="hover:bg-destructive"], [class~="text-primary-foreground"],
+      [class~="text-message-action-foreground"], [class~="text-destructive-foreground"],
+      [data-slot="switch"], [data-slot="checkbox"], [data-slot="radio"]
+    ) *
+  )) {
+    color: var(--catppuccin-interaction) !important;
+    font-weight: 600 !important;
+
+    &:is(svg.lucide) {
+      stroke-width: 2.35 !important;
+    }
+  }
+}

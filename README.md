@@ -61,7 +61,7 @@ Update the four Lavender screenshots under `assets/` at the same dimensions, the
 catwalk --directory assets --output preview.webp
 ```
 
-For a hosted port repository, use `t3-code` on the `main` branch, the description “💻 Soothing pastel theme for T3 Code,” and the topics `catppuccin`, `theme`, and `t3-code`. [Catppuccin port guidelines](https://github.com/catppuccin/catppuccin/blob/main/docs/port-creation.md)
+The GitHub repository is `catppuccin-t3-code`. It uses `main` as its default branch and the topics `catppuccin`, `theme`, and `t3-code`. [Catppuccin port guidelines](https://github.com/catppuccin/catppuccin/blob/main/docs/port-creation.md)
 
 ## Thanks to
 
